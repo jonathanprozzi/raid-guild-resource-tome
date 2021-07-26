@@ -1,5 +1,6 @@
 import { DefaultSeo } from "next-seo";
 import { ChakraProvider } from "@chakra-ui/react";
+import SiteLayout from "../components/SiteLayout";
 import theme from "../theme";
 
 const MyApp = ({ Component, pageProps }) => {
@@ -26,7 +27,9 @@ const MyApp = ({ Component, pageProps }) => {
           ],
         }}
       />
-      <Component {...pageProps} />
+      <SiteLayout>
+        <Component {...pageProps} />
+      </SiteLayout>
     </ChakraProvider>
   );
 };
