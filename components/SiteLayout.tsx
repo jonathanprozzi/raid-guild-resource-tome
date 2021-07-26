@@ -5,7 +5,7 @@ interface SiteLayoutProps {
   minHeight?: string;
 }
 
-const SiteLayout = ({ children, minHeight = "100vh" }) => {
+const SiteLayout = ({ children, minHeight = "100vh" }: SiteLayoutProps) => {
   return (
     <Flex
       direction='column'
