@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 
 interface SiteLayoutProps {
   children: React.ReactChild;
@@ -17,6 +17,14 @@ const SiteLayout = ({ children, minHeight = "100vh" }: SiteLayoutProps) => {
       background='black'
     >
       {/* <Navbar />   can add Navbar if you have one */}
+      <Flex
+        direction='column'
+        alignItems='center'
+        justifyContent='center'
+        marginY={{ base: "4" }}
+      >
+        <Heading color='brand.raid'>Resource Tome</Heading>
+      </Flex>
       <Flex
         direction='column'
         align='center'

@@ -75,9 +75,7 @@ export default function Home() {
 
   return (
     <Box>
-      <Heading>Resource Tome!</Heading>
       <Text>Let's grab some resources...</Text>
-      <pre>data: {data.length}</pre>
     </Box>
   );
 }
