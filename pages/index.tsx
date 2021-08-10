@@ -55,6 +55,7 @@ export default function Home() {
   if (data.length === 0) {
     return (
       <Flex
+        as='header'
         direction='column'
         justify='center'
         align='center'
