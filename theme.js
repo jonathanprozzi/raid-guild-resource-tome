@@ -21,7 +21,7 @@ const theme = extendTheme({
     brand: {
       black: "#000000",
       offWhite: "#f4f4f4",
-      green: "#81e6d9",
+      raid: "#ff3864",
     },
     brandGreen: {
       50: "#e0fefa",

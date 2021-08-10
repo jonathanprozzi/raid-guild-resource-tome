@@ -8,7 +8,7 @@ const fetcher = async (url: string) => {
     credentials: "same-origin",
   });
   if (!res.ok) {
-    throw Error("There is problem with the data request.");
+    throw Error("There is problem with reading the tome's pages.");
   }
   const data = await res.json();
 
@@ -25,7 +25,7 @@ export default function Home() {
         align='center'
         minHeight='100vh'
       >
-        <Alert status='error'>Failed to load resources: {error.message}</Alert>
+        <Alert status='error'>Problem reading the tome.{error.message}</Alert>
       </Flex>
     );
   }
@@ -39,12 +39,12 @@ export default function Home() {
         minHeight='100vh'
       >
         <Flex direction='column' align='center' justify='center'>
-          <Alert status='info'>Loading event photos!</Alert>
+          <Alert status='info'>The resource tome is empty.</Alert>
           <Spinner
             size='xl'
             thickness='2px'
-            emptyColor='cyan.100'
-            color='cyan.300'
+            emptyColor='red.100'
+            color='red.300'
             margin={4}
           />
         </Flex>
@@ -60,7 +60,13 @@ export default function Home() {
         align='center'
         minHeight='100vh'
       >
-        <Flex direction='column' align='center' justify='center'>
+        <Flex
+          direction='column'
+          align='center'
+          justify='center'
+          marginX={{ base: "8" }}
+          color='brand.raid'
+        >
           <Text fontSize='lg'>No resources have been added to the tome.</Text>
         </Flex>
       </Flex>
@@ -71,6 +77,7 @@ export default function Home() {
     <Box>
       <Heading>Resource Tome!</Heading>
       <Text>Let's grab some resources...</Text>
+      <pre>data: {data.length}</pre>
     </Box>
   );
 }
