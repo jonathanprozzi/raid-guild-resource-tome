@@ -14,6 +14,7 @@ const ResourceGrid = ({ data }) => (
       <ResourceCard
         key={idx}
         title={resource.fields["Title"]}
+        url={resource.fields["URL"]}
         conference={resource.fields["Conference"]}
       />
     ))}
