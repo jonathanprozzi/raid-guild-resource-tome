@@ -5,6 +5,7 @@ import {
   Text,
   Tag,
   Badge,
+  AspectRatio,
   Link as ChakraLink,
 } from "@chakra-ui/react";
 
@@ -12,9 +13,11 @@ interface Resource {
   title: string;
   url: string;
   conference: string;
+  year: string;
+  category: string;
 }
 
-const ResourceCard = ({ title, url, conference }: Resource) => (
+const ResourceCard = ({ title, url, conference, year, category }: Resource) => (
   <Flex
     padding={6}
     direction='column'
@@ -22,7 +25,7 @@ const ResourceCard = ({ title, url, conference }: Resource) => (
     justifyContent='flex-start'
     borderRadius='lg'
     background='gray.900'
-    minWidth={{ base: "80vw", md: "20vw" }}
+    minWidth={{ base: "80vw", md: "0" }}
     minHeight={{ base: "0", md: "300px" }}
   >
     <Flex
@@ -56,13 +59,38 @@ const ResourceCard = ({ title, url, conference }: Resource) => (
           {title}
         </Heading>
       </ChakraLink>
-      <Text
-        as='span'
-        color='brand.raid'
-        fontSize='xl'
-        overflowWrap='anywhere'
-        marginTop={2}
-      ></Text>
+      <Box>
+        <Badge paddingX={2} paddingY={1}>
+          {category}
+        </Badge>
+      </Box>
+      <AspectRatio maxW='560px' ratio={1} marginY={4} boxShadow='md'>
+        <iframe title={title} src={url} allowFullScreen />
+      </AspectRatio>
+      <Flex
+        direction='row'
+        alignItems='flex-start'
+        justifyContent='space-between'
+      >
+        <Text
+          as='span'
+          color='brand.raid'
+          fontSize='xl'
+          overflowWrap='anywhere'
+          marginTop={2}
+        >
+          {conference}
+        </Text>
+        <Text
+          as='span'
+          color='brand.raid'
+          fontSize='xl'
+          overflowWrap='anywhere'
+          marginTop={2}
+        >
+          {year}
+        </Text>
+      </Flex>
     </Flex>
   </Flex>
 );

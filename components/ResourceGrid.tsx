@@ -16,6 +16,8 @@ const ResourceGrid = ({ data }) => (
         title={resource.fields["Title"]}
         url={resource.fields["URL"]}
         conference={resource.fields["Conference"]}
+        year={resource.fields["Year"]}
+        category={resource.fields["Category"]}
       />
     ))}
   </SimpleGrid>
