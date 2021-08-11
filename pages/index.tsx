@@ -75,12 +75,20 @@ export default function Home() {
   }
 
   return (
-    <Box as='section'>
-      <Text>Let's grab some resources...</Text>
+    <Flex
+      as='section'
+      direction='column'
+      alignItems='center'
+      justifyContent='center'
+      maxWidth={{ base: "xl", md: "7xl" }}
+      marginX='auto'
+    >
+      <Text>
+        Welcome adventurer! This tome contains our collection of web3 conference
+        talk resources.
+      </Text>
       <Box
-        maxW={{ base: "xl", md: "7xl" }}
-        marginX={{ base: "20vw", md: "auto" }}
-        paddingX={{ base: "6", md: "10" }}
+        // paddingX={{ base: "6", md: "10" }}
         paddingTop={{ base: "0", md: "10" }}
         paddingBottom={20}
       >
@@ -88,13 +96,11 @@ export default function Home() {
           direction='column'
           justifyContent='center'
           alignItems='center'
-          maxW={{ base: "xl", md: "7xl" }}
-          mx='auto'
-          px={{ base: "6", md: "8" }}
+          marginX='auto'
         >
           <ResourceGrid />
         </Flex>
       </Box>
-    </Box>
+    </Flex>
   );
 }
