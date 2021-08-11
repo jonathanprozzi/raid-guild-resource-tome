@@ -1,6 +1,7 @@
-import { SimpleGrid, Center } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
+import ResourceCard from "./ResourceCard";
 
-const ResourceGrid = () => (
+const ResourceGrid = ({ data }) => (
   <SimpleGrid
     columns={{ base: 1, md: 2, lg: 3 }}
     spacing={{ base: "4", md: "12", lg: "20" }}
@@ -9,10 +10,13 @@ const ResourceGrid = () => (
     justifyItems='center'
     fontSize='2xl'
   >
-    <Center width='300px' height='300px' background='gray.100'></Center>
-    <Center width='300px' height='300px' background='gray.100'></Center>
-    <Center width='300px' height='300px' background='gray.100'></Center>
-    <Center width='300px' height='300px' background='gray.100'></Center>
+    {data.map((resource, idx) => (
+      <ResourceCard
+        key={idx}
+        title={resource.fields["Title"]}
+        conference={resource.fields["Conference"]}
+      />
+    ))}
   </SimpleGrid>
 );
 

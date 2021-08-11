@@ -63,12 +63,13 @@ export default function Home() {
       >
         <Flex
           direction='column'
-          align='center'
-          justify='center'
+          alignItems='center'
+          justifyContent='center'
           marginX={{ base: "8" }}
-          color='brand.raid'
         >
-          <Text fontSize='lg'>No resources have been added to the tome.</Text>
+          <Text color='Background.raid' fontSize='lg'>
+            No resources have been added to the tome.
+          </Text>
         </Flex>
       </Flex>
     );
@@ -83,22 +84,9 @@ export default function Home() {
       maxWidth={{ base: "xl", md: "7xl" }}
       marginX='auto'
     >
-      <Text>
-        Welcome adventurer! This tome contains our collection of web3 conference
-        talk resources.
-      </Text>
-      <Box
-        // paddingX={{ base: "6", md: "10" }}
-        paddingTop={{ base: "0", md: "10" }}
-        paddingBottom={20}
-      >
-        <Flex
-          direction='column'
-          justifyContent='center'
-          alignItems='center'
-          marginX='auto'
-        >
-          <ResourceGrid />
+      <Box paddingTop={{ base: 0, md: 4 }} paddingBottom={20}>
+        <Flex direction='column' justifyContent='center' alignItems='center'>
+          <ResourceGrid data={data} />
         </Flex>
       </Box>
     </Flex>
