@@ -1,5 +1,6 @@
-import { Box, Heading, Text, Flex, Alert, Spinner } from "@chakra-ui/react";
+import { Box, Text, Flex, Alert, Spinner } from "@chakra-ui/react";
 import useSWR from "swr";
+import ResourceGrid from "../components/ResourceGrid";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url, {
@@ -55,7 +56,6 @@ export default function Home() {
   if (data.length === 0) {
     return (
       <Flex
-        as='header'
         direction='column'
         justify='center'
         align='center'
@@ -75,8 +75,26 @@ export default function Home() {
   }
 
   return (
-    <Box>
+    <Box as='section'>
       <Text>Let's grab some resources...</Text>
+      <Box
+        maxW={{ base: "xl", md: "7xl" }}
+        marginX={{ base: "20vw", md: "auto" }}
+        paddingX={{ base: "6", md: "10" }}
+        paddingTop={{ base: "0", md: "10" }}
+        paddingBottom={20}
+      >
+        <Flex
+          direction='column'
+          justifyContent='center'
+          alignItems='center'
+          maxW={{ base: "xl", md: "7xl" }}
+          mx='auto'
+          px={{ base: "6", md: "8" }}
+        >
+          <ResourceGrid />
+        </Flex>
+      </Box>
     </Box>
   );
 }
