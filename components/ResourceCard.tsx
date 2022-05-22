@@ -60,7 +60,7 @@ const ResourceCard = ({ title, url, conference, year, category }: Resource) => (
         </Heading>
       </ChakraLink>
       <Box>
-        <Badge paddingX={2} paddingY={1}>
+        <Badge paddingX={2} paddingY={1} rounded='md'>
           {category}
         </Badge>
       </Box>
